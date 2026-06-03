@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool canMakeArithmeticProgression(vector<int>& arr) {
+        int n = arr.size();
+        sort(arr.begin(), arr.end());
+        int check = arr[0] - arr[1];
+        for(int i = 1; i < n-1; i++)
+        {
+            if(arr[i] - arr[i+1] != check)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+};
